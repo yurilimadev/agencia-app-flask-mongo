@@ -1,0 +1,45 @@
+<h3 style="text-align: center;">Outros Pacotes</h3>
+<section id="container--cartoes" class="demais--pacotes">
+    <div class="pacote">
+        <div class="div--image">
+            <a href="#">
+                <img src="https://images.pexels.com/photos/29673663/pexels-photo-29673663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            </a>
+        </div>
+        <div class="pacote--descricao">
+            <div class="pacote--titulo">
+                <p>Titulo Pacote</p>
+                <div>
+                    Estrela+Rating
+                </div>
+            </div>
+            <div class="pacote--detalhes">
+                <div>
+                    Descrição
+                </div>
+                <p>Preço</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="acoes--cartao">
+    <button id="mostrar--mais">Mais</button>
+    <span>Showing 
+        <span id="card-count"></span> of 
+        <span id="card-total"></span> cards      
+    </span>
+</div>
+<script>
+    
+    const botaoMostrarMais = document.querySelector('#mostrar--mais');
+    var secaoContainer = document.getElementsByClassName('demais--pacotes');
+    altura = 270;
+    secaoContainer[0].style.height = altura + "px";
+    botaoMostrarMais.addEventListener('click', function(){
+        altura += 270;
+        secaoContainer[0].style.height = altura + "px";
+        window.scrollBy(0,270);
+    })
+
+</script>

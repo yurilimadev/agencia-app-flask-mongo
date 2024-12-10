@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+/*CABEÇALHO*/
+
+
+.cabecalho{
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000AC0;
+    padding: 0 20px;
+    position: relative;
+    height: 90px;
+    margin: 10px 84px 0 84px;
+    border-radius: 15px;
+    
+}
+
+/*PONTO COMUM*/
+
+section{
+    background-color: #EFEFEF;
+    margin: 10px 84px 0 84px;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: small;
+}
+
+/*MELHORES AVALIADOS*/
+
+.melhores--avaliados{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 22px 20px;
+}
+
+.pacote{
+    background-color: #538EA1;
+    display: grid;
+    height: 240px;
+    width: 194px;
+    position: relative;
+    grid-template-rows: repeat(2, 1fr);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+.div--image img{
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    transition: transform .5s ease;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.div--image img:hover{
+    transform: scale(1.05);
+}
+.pacote--descricao{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    padding: 5px;
+}
+.pacote--titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pacote--detalhes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*DEMAIS PACOTES*/
+
+.demais--pacotes{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 270px;
+    animation-name: altura;
+    animation-duration: 1s;
+}
+
+
+
+.acoes--cartao{
+    margin: 8px;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.acoes--cartao button{
+    border-style: none;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: #000AC0;
+    color: #FFFFFF;
+    padding: 15px 30px;
+} 
+
+
+.mostrar--mais{
+    background-color: #000AC0;
+    align-self: center;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position:absolute;
+    top: 50%;
+    left: 43%;
+}
