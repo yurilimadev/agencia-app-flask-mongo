@@ -3,22 +3,41 @@
 {% block body %}
     <header class="cabecalho">
         <h2>GP Turismo</h2>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45" fill="none">
-            <rect width="45" height="45" fill="url(#pattern0_6_59)"/>
-            <defs>
-            <pattern id="pattern0_6_59" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image0_6_59" transform="scale(0.0111111)"/>
-            </pattern>
-            <image id="image0_6_59" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACI0lEQVR4nO3cTU5TURiA4coMN6AMvKVroK1OJLolg0nVXfgTSfzZhAYSNW5DYQWKiTrBtKPXVO/AAQSuPT/3g/dJOr0992vTAzdvzmAgSZIkSZKkEIArwF3gNXAIHLevA+AVcKf2GsMDRsBHzvYB2Ky93pCAKfCN8zsCxrXXHQowbAfX1Vegqb3+MIB9/t/b2usPAZiwuls1b+Aq8Az4SUxz4B5wDbgO7ACLFa/5A3gKrKcc9C6xzU64p4eJrr2bashrwC9ia07ZNFNY/l2+5qBPH3RDnwZ9QX46HpxwT48SXft5kiG3i1oHnrQbQESLdgPcaF/3E2yG34HHSTfDKIBxgg/lZu37CAHYW2HIb2qvPwz+bnLLf6e7+gLcqL3+iD8hRx2GvPxgtmqvO/Jj0vfnGPI7H5MmAGwDL4HP/zz4/wS8AG6neA9JkiT9YXdRAHYXRYY8tbvIP+Sh3UUB2F0UGfKEyN3FBeg65hm6i9xCdh2zjN1FbqG6jiZjd5FbqK6jydhd5Baq65hl7C5yC9V1LDJ0F7n1t+vA7qLosPdW+BbZXXQYdGN3UQh2F+Vgd1EWdheSJEmXFZ6/UWTII8/fyD/kqR1I/iEP7UAKwA6kyJAnl6oD6eF5HfMedCAhu47IHUioriNyBxKq64jcgYTqOiJ3IKG6jogdSH+7jq7sQArCDqTYoBs7kHLDHnv+Rrlhjzx/oyDsQCRJkiRJkga1/QYddPmfHLeE9gAAAABJRU5ErkJggg=="/>
-            </defs>
-        </svg>
+        <div class="dropdown">
+            <svg id='opcoes' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                <rect width="45" height="45" fill="url(#pattern0_6_59)"/>
+                <defs>
+                <pattern id="pattern0_6_59" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_6_59" transform="scale(0.0111111)"/>
+                </pattern>
+                <image id="image0_6_59" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACI0lEQVR4nO3cTU5TURiA4coMN6AMvKVroK1OJLolg0nVXfgTSfzZhAYSNW5DYQWKiTrBtKPXVO/AAQSuPT/3g/dJOr0992vTAzdvzmAgSZIkSZKkEIArwF3gNXAIHLevA+AVcKf2GsMDRsBHzvYB2Ky93pCAKfCN8zsCxrXXHQowbAfX1Vegqb3+MIB9/t/b2usPAZiwuls1b+Aq8Az4SUxz4B5wDbgO7ACLFa/5A3gKrKcc9C6xzU64p4eJrr2bashrwC9ia07ZNFNY/l2+5qBPH3RDnwZ9QX46HpxwT48SXft5kiG3i1oHnrQbQESLdgPcaF/3E2yG34HHSTfDKIBxgg/lZu37CAHYW2HIb2qvPwz+bnLLf6e7+gLcqL3+iD8hRx2GvPxgtmqvO/Jj0vfnGPI7H5MmAGwDL4HP/zz4/wS8AG6neA9JkiT9YXdRAHYXRYY8tbvIP+Sh3UUB2F0UGfKEyN3FBeg65hm6i9xCdh2zjN1FbqG6jiZjd5FbqK6jydhd5Baq65hl7C5yC9V1LDJ0F7n1t+vA7qLosPdW+BbZXXQYdGN3UQh2F+Vgd1EWdheSJEmXFZ6/UWTII8/fyD/kqR1I/iEP7UAKwA6kyJAnl6oD6eF5HfMedCAhu47IHUioriNyBxKq64jcgYTqOiJ3IKG6jogdSH+7jq7sQArCDqTYoBs7kHLDHnv+Rrlhjzx/oyDsQCRJkiRJkga1/QYddPmfHLeE9gAAAABJRU5ErkJggg=="/>
+                </defs>
+            </svg>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#" id="filtro">Filtro</a>
+                <a href="#" id="login">Login</a>
+            </div>
+        </div>
+        
+        
+        <script>
+            document.getElementById('opcoes').addEventListener('click', ()=>{
+                var dropdown = document.getElementById('myDropdown');
+                if(dropdown.style.display === 'none'){
+                    dropdown.style.display = 'flex';
+                    dropdown.style.flexDirection = 'column';
+                    } else {
+                        dropdown.style.display = 'none';
+                    }
+            })
+        </script>
     </header>
     <h3 style="text-align: center;">Melhores Avaliados</h3>
     <section class="melhores--avaliados">
         
         <div class="pacote">
             <div class="div--image">
-                <a href="#">
+                <a href="#" id="detalhes">
                     <img src="https://images.pexels.com/photos/29673663/pexels-photo-29673663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                 </a>
             </div>
@@ -41,5 +60,10 @@
     </section>
 
     {% include 'demais_pacotes.html' %}
+    <!--Modais-->
+    {% include 'modals/filtro.html' %}
+    {% include 'modals/login.html' %}
+    {% include 'modals/detalhes.html' %}
+
 
 {% endblock %}

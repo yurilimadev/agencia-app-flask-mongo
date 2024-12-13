@@ -1,6 +1,22 @@
-<div id="modal--filtro" class="modal--filtro">
+<div id="modal-filtro" class="modal--filtro">
     <div class="modal--filro--conteudo">
         <span class="close">&times;</span>
         <p>Some text in the Modal..</p>
     </div>
 </div>
+<script>
+    var filtro = document.querySelector('#filtro');
+    var spanFiltro = document.getElementsByClassName('close')[0];
+
+    // Abrir Modal 
+    filtro.addEventListener('click', ()=>{
+        var modalFiltro = document.querySelector('.modal--filtro');
+        modalFiltro.style.display = 'block';
+        
+    })
+    // Fechar Modal
+    spanFiltro.addEventListener('click', ()=>{
+        var modalFiltro = document.querySelector('.modal--filtro');
+        modalFiltro.style.display = 'none';
+    })
+</script>

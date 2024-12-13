@@ -1,0 +1,22 @@
+<div id="modal-login" class="modal--login">
+    <div class="modal--filro--conteudo">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+</div>
+<script>
+    var login = document.querySelector('#login');
+    var spanLogin = document.getElementsByClassName('close')[1];
+
+    // Abrir Modal 
+    login.addEventListener('click', ()=>{
+        var modalLogin = document.querySelector('.modal--login');
+        modalLogin.style.display = 'block';
+        
+    })
+    // Fechar Modal
+    spanLogin.addEventListener('click', ()=>{
+        var modalLogin = document.querySelector('.modal--login');
+        modalLogin.style.display = 'none';
+    })
+</script>

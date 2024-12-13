@@ -1,0 +1,22 @@
+<div id="modal-detalhes" class="modal--detalhes">
+    <div class="modal--filro--conteudo">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+</div>
+<script>
+    var detalhes = document.querySelector('#detalhes');
+    var spandetalhes = document.getElementsByClassName('close')[2];
+
+    // Abrir Modal 
+    detalhes.addEventListener('click', ()=>{
+        var modaldetalhes = document.querySelector('.modal--detalhes');
+        modaldetalhes.style.display = 'block';
+        
+    })
+    // Fechar Modal
+    spandetalhes.addEventListener('click', ()=>{
+        var modaldetalhes = document.querySelector('.modal--detalhes');
+        modaldetalhes.style.display = 'none';
+    })
+</script>
