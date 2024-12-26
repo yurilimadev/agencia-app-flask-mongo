@@ -31,11 +31,21 @@
     </header>
     <main>
         <section class="controle">
-            <div>
-                <a href="">Criar</a>
+            <div id="criar" style="cursor: pointer;">
+                <a>Criar</a>
             </div>
-            <div>
-                <a href="">Pesquisar</a>
+            <div class="area-pesquisa">
+                <div class="pesquisar">
+                    Pesquisar
+                </div>
+                <div class="barra-pesquisa">
+                    <input type="text" name="" id="">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+                            <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </button>
+                </div>
             </div>
         </section>
         <!--Onde vai ficar os modais-->
@@ -45,10 +55,33 @@
                 <p>Titulo Pacote</p>
             </div>
             <div class="item-botoes">
-                <a>Editar</a>
-                <a>Deletar</a>
+                <div id="editar">
+                    <a>Editar</a>
+                </div>
+                <div id="deletar">
+                    <a>Deletar</a>
+                </div>
             </div>
         </section>
     </main>
+    <script>
+        var pesquisa = document.querySelector('.pesquisar');
+        var barra = document.querySelector('.barra-pesquisa');
+        pesquisa.addEventListener('click', ()=>{
+            barra.classList.toggle('ativada');
+            if(barra.classList.contains('ativada')){
+                pesquisa.style.backgroundColor = '#000AC0';
+                pesquisa.style.color = '#fff';
+            }else{
+                pesquisa.style.backgroundColor = '#D9D9D9';
+                pesquisa.style.color = '#000';
+            }
+            
+        })
+    </script>
+    {% include 'modais-admin/criar.html' %}
+    {% include 'modais-admin/editar.html' %}
+    {% include 'modais-admin/deletar.html' %}
+    
 </body>
 </html>

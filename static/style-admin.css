@@ -26,9 +26,16 @@ main .controle{
     flex-direction: row;
     justify-content: flex-start;
     gap: 10px;
-    margin: 0 45px;
+    margin: 10px 45px;
 }
-.controle div {
+#criar{
+    background-color: #e3e3e3;
+    padding: 10px;
+    border-radius: 10px;
+}
+.controle {
+    display: flex;
+    align-items: center;
     background-color: #D9D9D9;
     padding: 10px;
     border-radius: 10px;
@@ -62,4 +69,140 @@ main .controle{
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+/*MODAIS*/
+.modal--criar{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%; /* Full width */
+    max-width: 670px;
+    max-height: 520px;
+    height: 100%;
+    padding: 60px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0);
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.modal--editar{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%; /* Full width */
+    max-width: 670px;
+    max-height: 520px;
+    height: 100%;
+    padding: 60px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0);
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.modal--deletar{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%; /* Full width */
+    max-width: 670px;
+    max-height: 520px;
+    height: 100%;
+    padding: 60px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0);
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.modal--filro--conteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+
+}
+.modal--filro--conteudo input[type=text]{
+    height: 40px;
+}
+.ajusta-celula{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-header, .grid-titulo, .grid-img, .grid-detalhes{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+
+.grid-div-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+}
+.grid-div-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+}
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.animate {
+    animation: animatezoom 0.6s
+  }
+  
+.modal--criar::-webkit-scrollbar{
+    display: none;
+}
+@keyframes animatezoom {
+    from {transform: scale(0) translate(0,0)}
+    to {transform: scale(1) translate(-50%,-50%)}
+}
+
+/*EFEITO BOTÃO PESQUISA*/
+.area-pesquisa{
+    display: flex;
+}
+.pesquisar{
+    padding: 10px;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+}
+.barra-pesquisa{
+    display: flex;
+    overflow: hidden;
+    width: 0px;
+}
+.barra-pesquisa button{
+    padding: 10px;
+    border: none;
+    background-color: #D9D9D9;
+    text-align: center;
+}
+.ativada{
+    width: 100%;
+    transition: width 1s;
 }
