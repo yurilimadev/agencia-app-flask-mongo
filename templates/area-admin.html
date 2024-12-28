@@ -64,7 +64,11 @@
             </div>
         </section>
     </main>
+    {% include 'modais-admin/criar.html' %}
+    {% include 'modais-admin/editar.html' %}
+    {% include 'modais-admin/deletar.html' %}
     <script>
+        // ACÔES PESQUISA
         var pesquisa = document.querySelector('.pesquisar');
         var barra = document.querySelector('.barra-pesquisa');
         pesquisa.addEventListener('click', ()=>{
@@ -73,15 +77,78 @@
                 pesquisa.style.backgroundColor = '#000AC0';
                 pesquisa.style.color = '#fff';
             }else{
-                pesquisa.style.backgroundColor = '#D9D9D9';
+                pesquisa.style.backgroundColor = '#e3e3e3';
                 pesquisa.style.color = '#000';
             }
             
         })
+        // Ações Edição e Deleção
+        var spaneditar= document.getElementsByClassName('close');
+
+        var editar = document.querySelectorAll('#editar');
+        var modaleditar = document.querySelector('.modal--editar');
+
+        var deletar = document.querySelectorAll('#deletar');
+        var modaldeletar = document.querySelector('.modal--deletar');
+        
+        var itemBotoes = document.querySelectorAll('.lista-pacotes .item-botoes a');
+        // Abrir Modal (EDITAR)
+        function habilitarEdicao(event){
+            event.preventDefault();
+            modaleditar.style.display = 'block';
+            console.log('abrindo modal'); 
+        }
+        // Abrir Modal (DELETE)
+        function habilitarDelecao(){
+            event.preventDefault();
+            modaldeletar.style.display = 'flex';
+            modaldeletar.style.flexDirection = 'column';
+            modaldeletar.style.justifyContent = 'center';
+            modaldeletar.style.alignItems = 'center';
+        }
+        function fecharModais(e){
+            e.preventDefault();
+            var modal = e.target.closest('.modal--criar, .modal--editar, .modal--deletar');
+            if (modal) {
+                modal.style.display = 'none';
+                console.log('Fechando modal:', modal);
+            }
+        }
+        // Fechar Modais
+        for (let i = 0; i < spaneditar.length; i++) {
+            spaneditar[i].addEventListener('click', fecharModais);
+            
+        }
+
+        var checkbox = document.querySelectorAll('input[type=checkbox]');
+        
+        checkbox.forEach((item,i)=>{
+            item.addEventListener('click', ()=>{
+                
+                if(item.checked){
+                    for (let i = 0; i < itemBotoes.length; i++) {
+                        itemBotoes[i].style.backgroundColor = '#000AC0';
+                        itemBotoes[i].style.color = '#fff';
+                        
+                    }
+                    
+                    deletar[i].addEventListener('click', habilitarDelecao);
+                    editar[i].addEventListener('click', habilitarEdicao);
+                    console.log('checked',i);
+                }else{
+                    for (let i = 0; i < itemBotoes.length; i++) {
+                        itemBotoes[i].style.backgroundColor = '#D9D9D9';
+                        itemBotoes[i].style.color = '#000';
+                        
+                    }
+                    deletar[i].removeEventListener('click', habilitarDelecao);
+                    editar[i].removeEventListener('click', habilitarEdicao);
+                    console.log('not checked')
+                }
+            })
+        })
     </script>
-    {% include 'modais-admin/criar.html' %}
-    {% include 'modais-admin/editar.html' %}
-    {% include 'modais-admin/deletar.html' %}
+    
     
 </body>
 </html>

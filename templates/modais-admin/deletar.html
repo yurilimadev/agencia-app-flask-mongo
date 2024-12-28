@@ -14,22 +14,3 @@
         </div>
     </div>
 </div>
-<script>
-    var deletar = document.querySelector('#deletar');
-    var spandeletar = document.getElementsByClassName('close')[2];
-
-    // Abrir Modal 
-    deletar.addEventListener('click', ()=>{
-        var modaldeletar = document.querySelector('.modal--deletar');
-        modaldeletar.style.display = 'flex';
-        modaldeletar.style.flexDirection = 'column';
-        modaldeletar.style.justifyContent = 'center';
-        modaldeletar.style.alignItems = 'center';
-        
-    })
-    // Fechar Modal
-    spandeletar.addEventListener('click', ()=>{
-        var modaldeletar = document.querySelector('.modal--deletar');
-        modaldeletar.style.display = 'none';
-    })
-</script>

@@ -52,21 +52,3 @@
     </form>
     
 </div>
-<script>
-    var editar = document.querySelector('#editar');
-    var spaneditar= document.getElementsByClassName('close')[1];
-
-    // Abrir Modal 
-    editar.addEventListener('click', ()=>{
-        console.log('abrindo modal');
-        var modaleditar = document.querySelector('.modal--editar');
-        modaleditar.style.display = 'block';
-        
-    })
-    // Fechar Modal
-    spaneditar.addEventListener('click', ()=>{
-        console.log('fechando modal');
-        var modaleditar = document.querySelector('.modal--editar');
-        modaleditar.style.display = 'none';
-    })
-</script>
