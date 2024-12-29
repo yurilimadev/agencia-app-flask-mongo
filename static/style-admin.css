@@ -228,3 +228,22 @@ main .controle{
     transition: width 1s;
     background-color: #e3e3e3;
 }
+/*EFEITO FLASH*/
+.alert-container {
+    margin: 10px 45px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #00b6d6;
+}
+
+.alert {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.alert-success {
+    color: #FFFFFF;
+}

@@ -280,6 +280,26 @@ section{
     margin: auto 40px;
     border-radius: 15px;
 }
+/* FLASH LOGIN */
+.alert-container {
+    margin: 10px 84px 0 84px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ff3434;
+}
+
+.alert {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.alert-erro {
+    color: #FFFFFF;
+}
+
 /*DETALHES*/
 .modal--detalhes{
     position: fixed;

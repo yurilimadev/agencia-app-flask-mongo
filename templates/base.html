@@ -12,6 +12,28 @@
     {% endblock %}
 </head>
 <body>
+    {% with mensagens = get_flashed_messages(with_categories=True)%}
+        {% if mensagens %}
+        <div id="flash" class="alert-container">
+            {% for categoria, mensagem in mensagens %}
+                <div class="alert-{{ categoria }}">{{ mensagem }}</div>
+            {% endfor %}
+        </div>
+            
+        {% endif %}
+    {% endwith %}
+    <script>
+        // Remove mensagens após 5 segundos
+        setTimeout(() => {
+            const flashMessages = document.getElementById('flash');
+            if (flashMessages) {
+                flashMessages.style.transition = 'opacity 0.5s';
+                flashMessages.style.opacity = '0';
+                setTimeout(() => flashMessages.remove(), 500); // Remover do DOM após fade
+            }
+        }, 5000); // Tempo em milissegundos
+    </script>
+
     {% block body %}
     {% endblock %}
 </body>
