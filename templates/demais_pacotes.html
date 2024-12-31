@@ -1,27 +1,35 @@
 <h3 style="text-align: center;">Outros Pacotes</h3>
 <section id="container--cartoes" class="demais--pacotes">
-    <div class="pacote">
-        <div class="div--image">
-            <a href="#">
-                <img src="https://images.pexels.com/photos/29673663/pexels-photo-29673663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-            </a>
-        </div>
-        <div class="pacote--descricao">
-            <div class="pacote--titulo">
-                <p>Titulo Pacote</p>
-                <div>
-                    Estrela+Rating
-                </div>
-            </div>
-            <div class="pacote--detalhes">
-                <div>
-                    Descrição
-                </div>
-                <p>Preço</p>
-            </div>
-        </div>
+    
+    {% for pacote in registros %}
+            <div class="pacote">
+            
 
-    </div>
+                <div class="div--image">
+                    <a href="#" id="detalhes">
+                        <img src="{{pacote['image']}}" alt="">
+                    </a>
+                </div>
+                
+                <div class="pacote--descricao">
+                    
+                        <div class="pacote--titulo">
+                            <div>{{ pacote['title'] }}</div>
+                            <div>
+                                {{ pacote['rating'] }}
+                            </div>
+                        </div>
+                        <div class="pacote--detalhes">
+                            <div>
+                                {{ pacote['description'] }}
+                            </div>
+                            <div>{{ pacote['price'] }}</div>
+                        </div>
+                    
+                </div>
+            
+            </div>
+        {% endfor %} 
 </section>
 <div class="acoes--cartao">
     <button id="mostrar--mais">Mais</button>

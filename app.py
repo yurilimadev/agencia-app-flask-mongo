@@ -10,9 +10,14 @@ app.config['SENHA'] = config['PASSWORD']
 app.config['SECRET_KEY'] = config['CHAVE']
 app.config['MONGO_URI'] = config['MONGO_URI']
 mongo = PyMongo(app)
-print(mongo.db.MyCollection.find({})[0])
+
 # Área Home
 todos_registros = mongo.db.MyCollection.find({})
+
+top_pacotes = mongo.db.MyCollection.find(
+    {'rating': {'$gte': 4.9}},
+    {'_id': 0, 'image': 1, 'title': 1, 'rating': 1, 'description': 1, 'price': 1}
+)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -30,7 +35,10 @@ def home():
             flash('Acesso Recusado! Revise as crendiciais!', 'erro')
             return redirect(url_for('home'))
 
-    return render_template('home.html', form_login=form_login, registros=todos_registros)
+    return render_template('home.html',
+                           form_login=form_login,
+                           registros=todos_registros,
+                           top_pacotes=top_pacotes)
 
 # Área de Admin
 
@@ -38,4 +46,4 @@ def home():
 @app.route('/area-admin', methods=['GET', 'POST'])
 def login():
     flash('Login realizado com Sucesso!', 'success')
-    return render_template('area-admin.html')
+    return render_template('area-admin.html', registros=todos_registros)

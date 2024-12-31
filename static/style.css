@@ -37,21 +37,26 @@ section{
 /*MELHORES AVALIADOS*/
 
 .melhores--avaliados{
+    font-size: 10px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 22px 20px;
 }
 
 .pacote{
     background-color: #538EA1;
+    margin-bottom: 10px;
     display: grid;
-    height: 240px;
-    width: 194px;
+    height: fit-content;
+    width: 197px;
     position: relative;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
+    justify-content: space-around;
 }
 .div--image img{
     display: block;
@@ -63,33 +68,42 @@ section{
 }
 
 .div--image img:hover{
-    transform: scale(1.05);
+    transform: scale(1.005);
 }
 .pacote--descricao{
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: auto auto;
     padding: 5px;
 }
 .pacote--titulo{
     display: flex;
+    font-weight: bold;
     flex-direction: row;
     justify-content: space-between;
 }
 .pacote--detalhes{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-size: 1em;
 }
+
 /*DEMAIS PACOTES*/
 
 .demais--pacotes{
+    font-size: 8px;
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    overflow: scroll;
     flex-wrap: wrap;
-    height: 270px;
+    height: 540px;
     animation-name: altura;
     animation-duration: 1s;
+}
+.demais--pacotes::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -325,8 +339,12 @@ section{
     gap: 10px;
     overflow-y: scroll;
 }
+.modal--filro--conteudo::-webkit-scrollbar{
+    display: none;
+}
 .modal--filro--conteudo input[type=text]{
     height: 40px;
+    border: #538EA1;
 }
 .ajusta-celula{
     display: flex;

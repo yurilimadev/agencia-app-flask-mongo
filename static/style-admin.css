@@ -44,6 +44,7 @@ main .controle{
 
 .lista-pacotes{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     background-color: #efefef;
     border-radius: 10px;

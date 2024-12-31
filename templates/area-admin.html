@@ -71,18 +71,23 @@
         </section>
         <!--Onde vai ficar os modais-->
         <section class="lista-pacotes">
-            <div class="item">
-                <input type="checkbox">
-                <p>Titulo Pacote</p>
-            </div>
-            <div class="item-botoes">
-                <div id="editar">
-                    <a>Editar</a>
+            {% for pacote in registros%}
+            <div style="display: flex; justify-content: space-between;">
+                <div class="item">
+                    <input type="checkbox">
+                    <p>{{ pacote['title'] }}</p>
                 </div>
-                <div id="deletar">
-                    <a>Deletar</a>
+                <div class="item-botoes">
+                    <div id="editar">
+                        <a>Editar</a>
+                    </div>
+                    <div id="deletar">
+                        <a>Deletar</a>
+                    </div>
                 </div>
             </div>
+
+            {% endfor %}
         </section>
     </main>
     {% include 'modais-admin/criar.html' %}
